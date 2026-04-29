@@ -1,0 +1,20 @@
+
+# Aca lo que hice fue subir todos mis archivos del curso a la rama past-exercises
+# y le hice un git push para subirlos a mi repositorio remoto
+# pull request creado para hacer merge con la rama main
+
+PS C:\Users\luisa\OneDrive\Escritorio\Lyfter Academy\luis-lyfter-dev> git log
+commit e88676fd5a2c613139742b5719b252e0f81ec2e8 (HEAD -> past-exercises, origin/past-exercises)
+Author: Luis Alonso Rojas H <luisalonsorojas7@gmail.com>
+Date:   Wed Apr 29 16:17:43 2026 -0600
+
+    Uploading all my files to my repo in past-exercises branch
+
+
+# Este es el commit inicial que se genera en nuestra rama main al agregar nuestro proyecto a git 
+
+commit 28563092ea46bf52e2707909b41da0bf45f86356 (origin/main, origin/HEAD, main)
+Author: luisalonsorojas7 <luisalonsorojas7@gmail.com>
+Date:   Wed Apr 29 16:15:45 2026 -0600
+
+    Initial commit
