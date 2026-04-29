@@ -1,0 +1,88 @@
+1. Cree un algoritmo que le pida 2 números al usuario, los guarde en dos variables distintas (primero y segundo) y los ordene de menor a mayor en dichas variables.
+
+¡Claro! Manteniendo tu estructura exacta de numeración y el cierre de bloques con Sino y Fin si, aquí tienes la versión corregida.
+
+El cambio principal es que moví los "Mostrar" para que, sin importar si el programa hace el intercambio o no, siempre te dé la respuesta al final:
+
+1. Inicio
+2. Definir primero
+3. Definir segundo
+4. Definir aux
+5. Mostrar "Ingresa el primer numero"
+6. Pedir primero
+7. Mostrar "Ingresa el segundo numero"
+8. Pedir segundo
+9. Si (primero > segundo) entonces
+	1. aux = primero
+	2. primero = segundo
+	3. segundo = aux
+10 .Fin si
+11. Mostrar "Los numeros ordenados son:"
+12. Mostrar primero
+13. Mostrar segundo
+14. Fin
+
+
+
+2. Cree un algoritmo que le pida al usuario una velocidad en km/h y la convierta a m/s. Recuerda que 1 km == 1000m y 1 hora == 60 minutos * 60 segundos.
+
+1. Inicio
+2. Definir velocidad_kmh
+3. Definir conversion
+5. Muestra "Ingresa una velocidad en km/h"
+6. Pedir velocidad_kmh
+7. conversion = (velocidad_kmh * 1000) / 3600
+8. Mostrar "La velocidad ingresada en km/h en m/s es:"
+9. Mostrar conversion
+10. Fin
+
+
+
+
+3. Cree un algoritmo que le pregunte al usuario por el sexo de 6 personas, ingresando 1 si es mujer o 2 si es hombre, y muestre al final el porcentaje de mujeres y hombres.
+
+1. Inicio
+2. Definir cantidad_personas
+3. Definir opcion_ingresada
+4. Definir porcentaje_mujeres
+5. Definir porcentaje_hombres
+6. Definir contador_mujer
+7. Definir contador_hombre
+8. Definir contador_pregunta
+9. cantidad_personas = 6
+10. contador_pregunta = 1
+11. contador_mujer = 0
+12. contador_hombre = 0
+13. Mientras (contador_pregunta <= cantidad_personas)
+	1. Mostrar "Ingrese 1 si es mujer o 2 si es hombre"
+	2. Pedir opcion_ingresada
+	3. Si (opcion_ingresada == 1) entonces	
+		1. contador_mujer = contador_mujer + 1
+	4. Sino
+		1. contador_hombre = contador_hombre + 1
+
+	5. Fin si
+
+	6. contador_pregunta = contador_pregunta + 1
+
+14. Fin Mientras
+15. porcentaje_hombres = (contador_hombre * 100) / cantidad_personas
+16. porcentaje_mujeres = (contador_mujer * 100) / cantidad_personas
+17. Mostrar "El porcentaje de mujeres es"
+18. Mostrar porcentaje_mujeres
+19. Mostrar "El porcentaje de hombres es"
+20. Mostrar porcentaje_hombres
+21. Fin
+
+
+
+
+
+
+
+
+
+
+
+
+

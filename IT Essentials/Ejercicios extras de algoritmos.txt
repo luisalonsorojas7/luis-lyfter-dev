@@ -1,0 +1,94 @@
+1. Cree un algoritmo como preparar una fiesta sorpresa para un amigo o familiar. 
+Considere si la persona está en casa o no, si los invitados ya llegaron o no, qué hacer mientras esperan, y cómo finaliza la fiesta
+-------------------------------------------------------------------------------------
+
+1. Inicio del algoritmo.
+
+2. Enviar ubicación de la fiesta a los invitados
+	1. Adjuntar fecha y hora en el mensaje de invitación
+
+4. SI el cumpleañero NO esta en casa 
+	1. Comenzar a recibir a los invitados
+  
+5. SINO 
+	1. Inventar una excusa para hacer que salga de su casa
+
+6. Mientras los invitados esperan
+	1. Repartir snacks y refrescos
+
+7. Llamar a el cumpleañero para que vuelva a casa
+
+8. SI el cumpleañero esta en casa
+	1. Gritar sorpresa junto a los invitados
+	2. Dar un discurso de felicitaciones
+	3. Reproducir musica para bailar
+	4. Brindar comida a los invitados
+
+9. Cantar feliz cumpleaños
+
+10. Repartir rebanadas de queque
+
+11. Despedir a los invitados cuando se cansen
+
+12. Fin del algoritmo.
+
+
+-------------------------------------------------------------------------------------
+
+2. Cree un algoritmo que represente cómo prepararse para un examen importante. 
+Debe incluir una lista de actividades (leer, repasar, practicar), condiciones como si ya entendió la materia, o si tiene dudas, 
+y un ciclo que se repita hasta sentirse listo
+-------------------------------------------------------------------------------------
+
+
+1. Inicio del algoritmo.
+
+2. Reunir la materia que saldrá en el examen
+
+4. Hacer un resumen de lo mas importante
+
+5. Leer el resumen creado
+
+6. Mientras no me sienta listo
+	1. Repasar la materia
+	2. Hacer ejercicios de practica
+	3. SI - no entendí la materia Y tengo dudas
+		1. Buscar mas información o buscar ayuda
+
+8. Realizar examen
+
+9. Fin del algoritmo.
+
+-------------------------------------------------------------------------------------
+
+
+Cree un algoritmo de como se prepara para ir a su viaje de diversión favorito
+
+1. Inicio del algoritmo.
+
+2. Ingresar a Google Flights para buscar vuelos
+	1. Ingresar fechas y país de destino
+
+3. SI aerolínea XYZ es mas barata que la aerolínea 123
+	1. comprar tickets con XYZ
+
+4. SINO comprar tickets con 123
+
+6. Confirmar que recibí el correo con el ticket de avion
+
+7. Crear itinerario de viaje de que lugares visitare
+
+8. Buscar Airbnb donde me hospedare
+
+9. SI el Airbnb queda céntrico y tiene mas de 4.5 estrellas	
+	1. Reservar hospedaje
+
+10. SINO 	
+	1. Busca en alguna otra plataforma de reserva de hospedaje
+	2. Reserva un hospedaje
+
+11. Realizar pago en la plataforma
+
+12. Esperar fecha para viajar
+
+13. Fin del algoritmo.

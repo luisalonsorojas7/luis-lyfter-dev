@@ -1,0 +1,106 @@
+Ejercicios
+1. Cree un algoritmo para ver un video en YouTube. Sea lo más especifico posible.
+Ver video en YouTube
+
+-------------------------------------------------------------------------------------
+1. Inicio del algoritmo.
+
+2. SI - no tengo conexión a internet:
+
+	1. No puedo ingresar a YouTube.com.
+
+	2. Fin del algoritmo.
+
+
+3. SI tengo smartphone O tengo tablet:
+
+	1. Abrir la app de YouTube para ver un video.
+
+4. SI tengo computadora:
+
+	1. Abrir el sitio web de YouTube.com para ver un video.
+
+5. SI NO tengo acceso desde ningún dispositivo:
+
+	1. Buscar a alguien que sí tenga acceso a YouTube y solicitar ayuda.
+
+
+6. Escribir en la barra de búsqueda qué video queremos buscar.
+	1. Presionar Enter o en el icono de la lupa
+
+7. Ver lista de resultados de videos encontrados.
+	1. Hacer clic en la miniatura del video que queremos ver.
+	2. SI aparece un anuncio
+		1. Esperar 5 segundos para poder omitirlo
+
+
+8. Reproducir video.
+
+9. Fin del algoritmo.
+
+-------------------------------------------------------------------------------------
+
+
+2. Cree un algoritmo que describa su rutina diaria. Use condiciones, condiciones multiples y ciclos.
+
+-------------------------------------------------------------------------------------
+
+1. Inicio del algoritmo.
+
+2. Abrir los ojos y levantarme de la cama
+
+3. Comenzar a trabajar
+	1. Escribir buenos días en Teams
+	2. Revisar mis correos
+	3. Revisar trabajo pendiente
+		(ciclo)
+		1. Mientras tenga tickets activos
+			1. Actualizar los tickets
+	 		2. Cerrar los que ya están resueltos
+
+4. Preparar el Desayuno
+
+5. SI son las 10.30am 
+	1.Hacer cardio en casa
+		1. Conectar la caminadora a la corriente
+		2. Caminar 30 minutos
+		3. Guardar caminadora
+
+6. Almorzar
+
+7. SI son las 4pm Y tengo puesta mi ropa deportiva
+	1. Ir a entrenar al gimnasio
+		(ciclo)
+		1. Mientras no haya terminado la rutina
+			1. Continuar levantando pesas
+
+8. SI hice estiramientos 
+	1. Regresar a casa
+
+9. Abrir la aplicación de UberEats
+	1. Revisar que promociones hay
+	2. Agregar comida al carrito
+	3. Pagar por la comida
+	4. Esperar que llegue la comida
+	5. Cenar
+	
+
+10. SI complete el modulo del programa Y comprendi la informacion
+	1. Realizar ejercicios
+	2. Subirlos a la plataforma
+	3. Esperar por feedback
+	4. Apagar la laptop
+
+11. SINO
+	1. Continuar estudiando
+	
+(ciclo)
+12. Mientras NO tengo sueño
+	1. Ver tik tok hasta que me de sueño
+
+13. Ir a dormir
+
+14. Fin del algoritmo
+
+
+-------------------------------------------------------------------------------------
