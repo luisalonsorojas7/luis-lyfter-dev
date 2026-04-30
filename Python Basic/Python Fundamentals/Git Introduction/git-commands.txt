@@ -1,9 +1,13 @@
 Comando	    Descripción
-git init	                    Inicia un repositorio local.
-git status	                    Muestra archivos modificados.
-git add nombre-archivo	        Agrega archivos al stage.
-git commit -m "mensaje"	        Crea un commit con los archivos en el stage.
-git checkout -b nombre-rama	    Crea una nueva rama.
-git checkout nombre-rama	    Cambia de rama.
-git push	                    Envía cambios al repositorio remoto.
-git pull	                    Descarga cambios del repositorio remoto.
+git init	                        Inicia un repositorio local.
+git status	                        Muestra archivos modificados.
+git add nombre-archivo	            Agrega archivos al stage.
+git commit -m "mensaje"	            Crea un commit con los archivos en el stage.
+git checkout -b nombre-rama	        Crea una nueva rama.
+git checkout nombre-rama	        Cambia de rama.
+git push	                        Envía cambios al repositorio remoto.
+git pull	                        Descarga cambios del repositorio remoto.
+git push origin --delete "branc"    Borra la rama remota en github
+git branch -d                       Borra la rama local
+git log                             Ver los cambios realizados
+
