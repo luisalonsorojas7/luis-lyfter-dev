@@ -1,0 +1,75 @@
+1. Cree un pseudocódigo que le pida un precio de producto al usuario, calcule su descuento y muestre el precio final tomando en cuenta que:
+Si el precio es menor a 100, el descuento es del 2%.
+Si el precio es mayor o igual a 100, el descuento es del 10%.
+
+1. Inicio
+2. Definir precio_producto
+3. Definir descuento
+4. Definir precio_final
+5. Mostrar "Ingrese el precio del producto"
+6. Pedir precio_producto
+7. Si (precio_producto < 100) entonces
+	1. descuento = precio_producto * 0.02
+8. Sino
+	1. descuento = precio_producto * 0.10
+9. Fin si
+10. precio_total = precio_producto - descuento
+11. Mostrar "El precio final incluyendo el descuento es"
+12. Mostrar precio_total
+13. Fin
+
+
+
+2. Cree un pseudocódigo que le pida un tiempo en segundos al usuario y calcule si es menor o mayor a 10 minutos. Si es menor, muestre cuantos segundos 
+faltarían para llegar a 10 minutos. Si es mayor, muestre “Mayor”. Si es exactamente igual, muestre “Igual”.
+
+1. Inicio
+2. Definir tiempo_segundos
+3. Definir segundos_restantes
+4. Definir conversion_minutos
+5. Definir cantidad_minutos
+6. cantidad_minutos = 10
+7. conversion_minutos = cantidad_minutos * 60
+9. Mostrar "Ingrese el tiempo en segundos que desea calcular"
+10. Pedir tiempo_segundos
+11. Si (tiempo_segundos == conversion_minutos) entonces
+	1. Mostrar "Igual"
+12. Sino
+	1. Si (tiempo_segundos > conversion_minutos) entonces
+		1. Mostrar "Mayor"
+	2. Sino
+		1. segundos_restantes = conversion_minutos - tiempo_segundos
+		2. Mostrar "Segundos restantes:"
+		3. Mostrar segundos_restantes
+
+	3. Fin si		
+13. Fin sino 
+14. Fin si
+15. Fin
+
+
+
+3. Cree un algoritmo que le pida un numero al usuario, y realice una suma de cada numero del 1 hasta ese número ingresado. 
+Luego muestre el resultado de la suma.
+
+1. Inicio
+2. Definir numero_usuario
+3. Definir suma_total
+4. Definir contador
+5. contador = 1
+6. suma_total = 0
+7. Mostrar "Ingresa el numero que deseas sumar"
+8. Pedir numero_usuario
+9. Mientras (contador <= numero_usuario)
+ 	1. suma_total = suma_total + contador
+ 	2. contador = contador +1
+10. Fin mientras
+11. Mostrar "La suma total de ese numero es"
+12. Mostrar suma_total
+13. Fin
+
+
+
+
+
+
