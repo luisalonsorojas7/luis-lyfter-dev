@@ -29,6 +29,23 @@ def view_students_list(students_list):
         print(
             f"Student: {student['name']} | Section: {student['section']} | Spanish Grade: {student['spanish']} | English Grade: {student['english']} | Social Studies Grade: {student['social']} | Science Grade: {student['science']}"
         )
+        
+def get_top_students(students_list):
+    grades_list = []
+    for student in students_list:
+        name = student['name']
+        grade_average = (student['spanish'] + student['english'] + student['social'] + student['science']) / 4
+        grades_list.append((name, grade_average))
+        grades_list.sort(key=lambda x: x[1], reverse=True)
+    
+    return grades_list
+
+def print_top_3_students(grades_list):
+    top_3 = grades_list[:3]
+    print("\n--- TOP 3 STUDENTS ---")
+    for index, student in enumerate(top_3, start=1):
+        print(f"{index}. {student[0]} - Average: {student[1]}")
+
 
 
 def main():
@@ -76,7 +93,7 @@ def main():
                     else:
                         view_students_list(students_list)
                 case 3:
-                    print("Hola")
+                    print_top_3_students(get_top_students(students_list))
                 case 4:
                     print("Hola")
                 case 5:
