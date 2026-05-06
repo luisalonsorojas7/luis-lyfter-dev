@@ -30,23 +30,28 @@ def view_students_list(students_list):
             f"Student: {student['name']} | Section: {student['section']} | Spanish Grade: {student['spanish']} | English Grade: {student['english']} | Social Studies Grade: {student['social']} | Science Grade: {student['science']}"
         )
         
-def get_top_students(students_list):
+def get_grades_average(students_list):
     grades_list = []
     for student in students_list:
         name = student['name']
         grade_average = (student['spanish'] + student['english'] + student['social'] + student['science']) / 4
         grades_list.append((name, grade_average))
         grades_list.sort(key=lambda x: x[1], reverse=True)
-    
     return grades_list
 
 def print_top_3_students(grades_list):
     top_3 = grades_list[:3]
     print("\n--- TOP 3 STUDENTS ---")
     for index, student in enumerate(top_3, start=1):
-        print(f"{index}. {student[0]} - Average: {student[1]}")
-
-
+        print(f"{index}. {student[0]} - Grade average: {student[1]}")
+        
+def get_general_average(grades_lists):
+    result = 0
+    for average in grades_lists:
+        result += average[1] 
+    
+    general_average = result / len(grades_lists)
+    print(f"Class average is: {general_average:.2f}")
 
 def main():
     menu_option = 7
@@ -93,9 +98,9 @@ def main():
                     else:
                         view_students_list(students_list)
                 case 3:
-                    print_top_3_students(get_top_students(students_list))
+                    print_top_3_students(get_grades_average(students_list))
                 case 4:
-                    print("Hola")
+                    get_general_average(get_grades_average(students_list))
                 case 5:
                     print("Hola")
                 case 6:
