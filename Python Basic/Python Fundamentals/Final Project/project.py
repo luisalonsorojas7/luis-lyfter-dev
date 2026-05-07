@@ -1,5 +1,13 @@
+import csv
 students_list = []
-
+students_headers = (
+	'name',
+	'section',
+	'spanish',
+	'english',
+    'social',
+    'science'
+)
 def add_student(
     name, section, spanish_grade, english_grade, social_studies_grade, science_grade
 ):
@@ -29,6 +37,7 @@ def view_students_list(students_list):
         print(
             f"Student: {student['name']} | Section: {student['section']} | Spanish Grade: {student['spanish']} | English Grade: {student['english']} | Social Studies Grade: {student['social']} | Science Grade: {student['science']}"
         )
+    return students_list
         
 def get_grades_average(students_list):
     grades_list = []
@@ -52,6 +61,12 @@ def get_general_average(grades_lists):
     
     general_average = result / len(grades_lists)
     print(f"Class average is: {general_average:.2f}")
+    
+def export_students_to_csv(file_path, data, headers):
+    with open(file_path, 'w', encoding='utf-8') as file:
+        writer = csv.DictWriter(file, headers, delimiter="\t")
+        writer.writeheader()
+        writer.writerows(data)
 
 def main():
     menu_option = 7
@@ -102,7 +117,11 @@ def main():
                 case 4:
                     get_general_average(get_grades_average(students_list))
                 case 5:
-                    print("Hola")
+                    if not students_list:
+                        print("No students found to create export the data to CSV. Back to menu...\n")
+                    else:
+                        print("Students information has been exported to CSV file\n")
+                        export_students_to_csv('students.csv', students_list ,students_headers)
                 case 6:
                     print("Hola")
                 case _:
