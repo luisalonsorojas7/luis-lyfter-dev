@@ -68,6 +68,28 @@ def export_students_to_csv(file_path, data, headers):
         writer.writeheader()
         writer.writerows(data)
 
+def import_students_data(file):
+    with open(file, "r", encoding="utf-8") as file:
+        reader = csv.DictReader(file, delimiter="\t")
+        for row in reader:
+            name = row['name']
+            section = row['section']
+            spanish = int(row['spanish'])
+            english = int(row['english'])
+            social = int(row['social'])
+            science = int(row['science'])
+                            
+            student = {
+                "name": name,
+                "section": section,
+                "spanish": spanish,
+                "english": english,
+                "social": social,
+                "science": science,
+            }
+            
+            students_list.append(student)
+
 def main():
     menu_option = 7
     while True:
@@ -123,7 +145,18 @@ def main():
                         print("Students information has been exported to CSV file\n")
                         export_students_to_csv('students.csv', students_list ,students_headers)
                 case 6:
-                    print("Hola")
+                    option = "y"
+                    option = input("There is no file imported so far, would you link to import one ? (Y/N) \n")
+                    if option.lower() == "n":
+                        print("Back to Menu...\n")
+                        pass
+                    elif option.lower() == "y":
+                            try:
+                                file_to_read = input("Please enter the CSV file name you want to import (Exp: <file>.csv): \n")
+                                import_students_data(file_to_read)
+                                print("File successfully imported!\n")
+                            except FileNotFoundError:
+                                print("File not found, please check if name is correct. No CSV file loaded.")
                 case _:
                     print("Invalid option!")
         except ValueError:
