@@ -89,9 +89,34 @@ def import_students_data(file):
             }
             
             students_list.append(student)
+            
+            
+def remove_student(students):
+    name = input("Please enter student name:\n")
+    section = input("Please  enter student section:\n")
+    student_found = False
+    
+    for student in students:
+        if name == student['name'] and section == student['section']:
+            student_found = True
+            option = input(f"Student {name} found! Are you sure you want to remove it ? (Y/N)")
+            if option.lower() == 'y':
+                students.remove(student)
+                print(f"Student {name} was succesfully removed!")
+                break
+            elif option == 'n':
+                print("Back to menu...")
+
+    if not student_found:
+        print("No student found!")
+
+def get_failing_students(students_list):
+    for student in students_list:
+        print(student)
+
 
 def main():
-    menu_option = 7
+    menu_option = 9
     while True:
         print("Student Tracking System App!")
         print("Menu Options")
@@ -101,7 +126,9 @@ def main():
         print("4. Average grades")
         print("5. Export students data to CSV")
         print("6. Import data from CVS")
-        print("7. Exit")
+        print("7. Remove students")
+        print("8. Failed students")
+        print("9. Exit")
 
         try:
             option_selected = int(input("Please enter an option (1-7) \n"))
@@ -157,6 +184,15 @@ def main():
                                 print("File successfully imported!\n")
                             except FileNotFoundError:
                                 print("File not found, please check if name is correct. No CSV file loaded.")
+                
+                case 7:
+                    if not students_list:
+                        print("No students found in the sytem! Back to menu...\n")
+                    else:
+                        remove_student(students_list)
+                case 8:
+                    print("\n--- FAILING STUDENTS ---")
+                    get_failing_students(students_list)
                 case _:
                     print("Invalid option!")
         except ValueError:
