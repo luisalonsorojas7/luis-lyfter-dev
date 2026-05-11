@@ -89,7 +89,32 @@ def import_students_data(file):
             }
             
             students_list.append(student)
+
+def is_valid_name():
+    while True:
+        name = input("Please enter student name: ").strip()
+        if len(name) == 0:
+            print("Name cannot be empty!")
+            continue
+        
+        if name.replace(" ", "").isalpha():
+            return name
+        else:
+            print("Invalid name! Please use only letters (no numbers or symbols).")         
             
+def is_valid_section():
+    while True:
+        section = input("Please enter student section: ").strip()
+        
+        if len(section) == 0 or len(section) > 3:
+            print("Use only 2 digits and one letter. Correct format -> Exp: 11B | Section cant be empty!!!")
+            continue
+        
+        if section[0].isdigit() and section[1].isdigit():
+            if not section[2].isdigit():
+                return section.upper()
+        else:
+            print("Wrong format, please try again -> Exp: 11B")
             
 def remove_student(students):
     name = input("Please enter student name:\n")
@@ -110,11 +135,31 @@ def remove_student(students):
     if not student_found:
         print("No student found!")
 
-def get_failing_students(students_list):
-    for student in students_list:
-        print(student)
+def get_failing_students(students):
+    any_failing = False
+    for student in students:
+        this_student_fails = []
+        name = student['name']
+        section = student['section']
+        spanish = student['spanish']
+        english = student['english']
+        social = student['social']
+        science = student['science']
 
-
+        if student['spanish'] < 60: this_student_fails.append(f"Spanish ({student['spanish']})")
+        if student['english'] < 60: this_student_fails.append(f"English ({student['english']})")
+        if student['social'] < 60: this_student_fails.append(f"Social Studies ({student['social']})")
+        if student['science'] < 60: this_student_fails.append(f"Science ({student['science']})")
+        
+        if this_student_fails:
+            any_failing = True
+            subjects = ", ".join(this_student_fails)
+            print(f"Student: {student['name']} Section: [{student['section']}] - Failed: {subjects}")
+            
+    if not any_failing:
+        print("Great news! No students are failing so far.")
+    
+            
 def main():
     menu_option = 9
     while True:
@@ -144,8 +189,8 @@ def main():
                             numer_of_students = int(input("How many students would you like to add to the system?\n"))
                             break
                         for _ in range(numer_of_students):
-                            name = input("Please enter student name:\n")
-                            section = input("Please student section: \n")
+                            name = is_valid_name()
+                            section = is_valid_section()
                             spanish = get_valid_grade("Spanish")
                             english = get_valid_grade("English")
                             social = get_valid_grade("Social Studies")
