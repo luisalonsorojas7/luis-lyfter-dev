@@ -93,4 +93,4 @@ def get_failing_students(students):
             print(f"Student: {student['name']} Section: [{student['section']}] - Failed: {subjects}")
             
     if not any_failing:
-        print("Great news! No students are failing so far.")
+        print("Great news! No students are failing so far. ")
