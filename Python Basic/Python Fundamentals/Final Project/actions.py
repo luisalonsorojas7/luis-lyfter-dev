@@ -94,5 +94,3 @@ def get_failing_students(students):
             
     if not any_failing:
         print("Great news! No students are failing so far.")
-    
-            
