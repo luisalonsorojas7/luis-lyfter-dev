@@ -1,40 +1,3 @@
-def get_valid_grade(subject_name):
-    while True:
-        try:
-            grade = int(input(f"Please enter {subject_name} grade: "))
-            if 0 <= grade <= 100:
-                return grade
-            else:
-                print("Invalid range! Must be between 0 and 100.")
-        except ValueError:
-            print("Please only use numbers, do not use letters")
-
-def is_valid_name():
-    while True:
-        name = input("Please enter student name: ").strip()
-        if len(name) == 0:
-            print("Name cannot be empty!")
-            continue
-        
-        if name.replace(" ", "").isalpha():
-            return name
-        else:
-            print("Invalid name! Please use only letters (no numbers or symbols).")         
-            
-def is_valid_section():
-    while True:
-        section = input("Please enter student section: ").strip()
-        
-        if len(section) == 0 or len(section) > 3:
-            print("Use only 2 digits and one letter. Correct format -> Exp: 11B | Section cant be empty!!!")
-            continue
-        
-        if section[0].isdigit() and section[1].isdigit():
-            if not section[2].isdigit():
-                return section.upper()
-        else:
-            print("Wrong format, please try again -> Exp: 11B")
-
 import actions
 import data
 
@@ -64,13 +27,18 @@ def is_valid_section():
     while True:
         section = input("Please enter student section: ").strip()
         if len(section) == 0 or len(section) > 3:
-            print("Use only 2 digits and one letter. Correct format -> Exp: 11B | Section cant be empty!!!")
+            print("Wrong format, please try again -> Exp: 11B or 9B | Section cant be empty!!!")
             continue
-        if section[0].isdigit() and section[1].isdigit():
-            if not section[2].isdigit():
+        
+        if len(section) == 2:
+            if section[0].isdigit() and section[1].isalpha():
+                return section.upper()
+            
+        if len(section) == 3:
+            if section[0].isdigit() and section[1].isdigit() and section[2].isalpha():
                 return section.upper()
         else:
-            print("Wrong format, please try again -> Exp: 11B")
+            print("Wrong format, please try again -> Exp: 11B or 9B")
 
 def run_menu(students_list):
     menu_option = 9
@@ -104,16 +72,18 @@ def run_menu(students_list):
                             english = get_valid_grade("English")
                             social = get_valid_grade("Social Studies")
                             science = get_valid_grade("Science")
-                            actions.add_student(name, section, spanish, english, social, science)
+                            actions.add_student(students_list,name, section, spanish, english, social, science)
                     except ValueError:
                         print("\nPlease only use numbers\n")
                 case 2:
                     if not students_list: print("No students found!")
                     else: actions.view_students_list(students_list)
                 case 3:
-                    actions.print_top_3_students(actions.get_grades_average(students_list))
+                    if not students_list: print("No students found!")
+                    else: actions.print_top_3_students(actions.get_grades_average(students_list))
                 case 4:
-                    actions.get_general_average(actions.get_grades_average(students_list))
+                    if not students_list: print("No students found!")
+                    else: actions.get_general_average(actions.get_grades_average(students_list))
                 case 5:
                     if not students_list: print("No students to export!")
                     else: 
@@ -122,7 +92,7 @@ def run_menu(students_list):
                 case 6:
                     file_to_read = input("Enter CSV name: ")
                     try: 
-                        data.import_students_data(file_to_read)
+                        data.import_students_data(file_to_read, students_list)
                         print("Imported successfully!")
                     except FileNotFoundError: print("File not found!")
                 case 7:
