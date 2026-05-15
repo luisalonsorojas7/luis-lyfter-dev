@@ -21,7 +21,7 @@ def is_valid_name():
         if name.replace(" ", "").isalpha():
             return name
         else:
-            print("Invalid name! Please use only letters (no numbers or symbols).")         
+            print("Invalid name! Please use only letters (no numbers or symbols)")         
 
 def is_valid_section():
     while True:
