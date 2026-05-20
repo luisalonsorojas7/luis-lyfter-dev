@@ -88,3 +88,43 @@ def get_failing_students(students):
             
     if not any_failing:
         print("Great news! No students are failing so far.")
+        
+
+def get_valid_grade(subject_name):
+    while True:
+        try:
+            grade = int(input(f"Please enter {subject_name} grade: "))
+            if 0 <= grade <= 100:
+                return grade
+            else:
+                print("Invalid range! Must be between 0 and 100.")
+        except ValueError:
+            print("Please only use numbers, do not use letters")
+
+def is_valid_name():
+    while True:
+        name = input("Please enter student name: ").strip()
+        if len(name) == 0:
+            print("Name cannot be empty!")
+            continue
+        if name.replace(" ", "").isalpha():
+            return name
+        else:
+            print("Invalid name! Please use only letters (no numbers or symbols)")         
+
+def is_valid_section():
+    while True:
+        section = input("Please enter student section: ").strip()
+        if len(section) == 0 or len(section) > 3:
+            print("Wrong format, please try again -> Exp: 11B or 9B | Section cant be empty!!!")
+            continue
+        
+        if len(section) == 2:
+            if section[0].isdigit() and section[1].isalpha():
+                return section.upper()
+            
+        if len(section) == 3:
+            if section[0].isdigit() and section[1].isdigit() and section[2].isalpha():
+                return section.upper()
+        else:
+            print("Wrong format, please try again -> Exp: 11B or 9B")

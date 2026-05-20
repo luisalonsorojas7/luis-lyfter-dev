@@ -1,45 +1,6 @@
 import actions
 import data
 
-def get_valid_grade(subject_name):
-    while True:
-        try:
-            grade = int(input(f"Please enter {subject_name} grade: "))
-            if 0 <= grade <= 100:
-                return grade
-            else:
-                print("Invalid range! Must be between 0 and 100.")
-        except ValueError:
-            print("Please only use numbers, do not use letters")
-
-def is_valid_name():
-    while True:
-        name = input("Please enter student name: ").strip()
-        if len(name) == 0:
-            print("Name cannot be empty!")
-            continue
-        if name.replace(" ", "").isalpha():
-            return name
-        else:
-            print("Invalid name! Please use only letters (no numbers or symbols)")         
-
-def is_valid_section():
-    while True:
-        section = input("Please enter student section: ").strip()
-        if len(section) == 0 or len(section) > 3:
-            print("Wrong format, please try again -> Exp: 11B or 9B | Section cant be empty!!!")
-            continue
-        
-        if len(section) == 2:
-            if section[0].isdigit() and section[1].isalpha():
-                return section.upper()
-            
-        if len(section) == 3:
-            if section[0].isdigit() and section[1].isdigit() and section[2].isalpha():
-                return section.upper()
-        else:
-            print("Wrong format, please try again -> Exp: 11B or 9B")
-
 def run_menu(students_list):
     menu_option = 9
     while True:
@@ -50,7 +11,7 @@ def run_menu(students_list):
         print("3. Top 3 students")
         print("4. Average grades")
         print("5. Export students data to CSV")
-        print("6. Import data from CVS")
+        print("6. Import data from CSV")
         print("7. Remove students")
         print("8. Failed students")
         print("9. Exit")
@@ -64,14 +25,14 @@ def run_menu(students_list):
             match option_selected:
                 case 1:
                     try:
-                        numer_of_students = int(input("How many students would you like to add?\n"))
-                        for _ in range(numer_of_students):
-                            name = is_valid_name()
-                            section = is_valid_section()
-                            spanish = get_valid_grade("Spanish")
-                            english = get_valid_grade("English")
-                            social = get_valid_grade("Social Studies")
-                            science = get_valid_grade("Science")
+                        number_of_students = int(input("How many students would you like to add?\n"))
+                        for _ in range(number_of_students):
+                            name = actions.is_valid_name()
+                            section = actions.is_valid_section()
+                            spanish = actions.get_valid_grade("Spanish")
+                            english = actions.get_valid_grade("English")
+                            social = actions.get_valid_grade("Social Studies")
+                            science = actions.get_valid_grade("Science")
                             actions.add_student(students_list,name, section, spanish, english, social, science)
                     except ValueError:
                         print("\nPlease only use numbers\n")

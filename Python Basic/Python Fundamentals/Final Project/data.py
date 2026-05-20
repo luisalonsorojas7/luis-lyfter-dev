@@ -16,6 +16,7 @@ def export_students_to_csv(file_path, data, headers):
         writer.writerows(data)
 
 def import_students_data(file_path, students_list):
+    students_list.clear()
     with open(file_path, "r", encoding="utf-8") as file:
         reader = csv.DictReader(file, delimiter="\t")
         for row in reader:
